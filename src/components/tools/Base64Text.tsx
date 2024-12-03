@@ -41,6 +41,7 @@ export const Base64Text: React.FC = () => {
           onChange={setInput}
           placeholder={isEncode ? "Enter text to encode" : "Enter base64 to decode"}
           showPaste
+          size="sm"
         />
         <TextArea
           label="Output"

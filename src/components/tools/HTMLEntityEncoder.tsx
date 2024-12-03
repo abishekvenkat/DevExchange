@@ -55,11 +55,13 @@ export const HTMLEntityEncoder: React.FC = () => {
           value={input}
           onChange={setInput}
           placeholder={isEncode ? "Enter HTML to encode" : "Enter HTML entities to decode"}
+          size="sm"
           showPaste
         />
         <TextArea
           label="Output"
           value={output}
+          size="sm"
           readOnly
           showCopy
         />

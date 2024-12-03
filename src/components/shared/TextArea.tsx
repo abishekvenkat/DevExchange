@@ -11,6 +11,7 @@ interface TextAreaProps {
   readOnly?: boolean;
   showCopy?: boolean;
   showPaste?: boolean;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({
@@ -21,7 +22,14 @@ export const TextArea: React.FC<TextAreaProps> = ({
   readOnly = false,
   showCopy = false,
   showPaste = false,
+  size = 'md',
 }) => {
+  const heights = {
+    sm: 'min-h-[100px]',
+    md: 'min-h-[200px]',
+    lg: 'min-h-[400px]',
+  };
+
   return (
     <div className="relative">
       <Textarea
@@ -30,7 +38,10 @@ export const TextArea: React.FC<TextAreaProps> = ({
         onChange={(e) => onChange?.(e.target.value)}
         placeholder={placeholder}
         readOnly={readOnly}
-        className="min-h-[200px]"
+        classNames={{
+          input: `${heights[size]} resize-none`,
+          base: "h-full",
+        }}
       />
       {showCopy && <CopyButton text={value} />}
       {showPaste && onChange && <PasteButton onPaste={onChange} />}

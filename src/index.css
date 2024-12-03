@@ -19,3 +19,20 @@ body {
   margin: 0;
   min-height: 100vh;
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  transition: transform 1s ease; /* Smooth transition for the rotation */
+}
+
+.rotate {
+  animation: rotate 1s forwards; /* Use keyframe animation */
+}

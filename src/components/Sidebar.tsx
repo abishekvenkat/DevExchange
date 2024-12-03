@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@nextui-org/react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { 
-  Menu,
+  Variable,
   Binary,
   Image,
   Key,
@@ -13,7 +13,10 @@ import {
   QrCode,
   Database,
   Type,
-  Terminal
+  Terminal,
+  Text,
+  Hash,
+  Palette
 } from 'lucide-react';
 import { useSidebarStore } from '../store/sidebar';
 
@@ -29,12 +32,26 @@ const tools = [
   { id: 'sql', name: 'SQL Formatter', icon: Database },
   { id: 'case', name: 'Case Converter', icon: Type },
   { id: 'ascii', name: 'ASCII Converter', icon: Braces },
+  { id: 'lorem-ipsum', name: 'Lorem Ipsum', icon: Text },
+  { id: 'number-base', name: 'Number Base', icon: Hash },
+  { id: 'color', name: 'RBG/Hex', icon: Palette },
 ];
 
 export const Sidebar: React.FC = () => {
   const { isOpen, isPinned, toggleOpen } = useSidebarStore();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const handleIconClick = () => {
+    setIsAnimating(true);
+    toggleOpen();
+
+    // Remove the animation class after the animation ends
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 1000); // Duration of the animation
+  };
 
   return (
     <div
@@ -46,8 +63,11 @@ export const Sidebar: React.FC = () => {
         {isOpen && <h1 className="text-xl font-bold">DevExchange</h1>}
         <div className="flex gap-2">
           
-          <Button isIconOnly variant="light" onClick={toggleOpen}>
-            <Menu size={20} />
+          <Button isIconOnly variant="light" onClick={handleIconClick}>
+            <Variable
+              className={`icon ${isAnimating ? 'rotate' : ''}`}
+              size={20}
+            />
           </Button>
         </div>
       </div>
@@ -74,3 +94,5 @@ export const Sidebar: React.FC = () => {
     </div>
   );
 };
+
+export default Sidebar;

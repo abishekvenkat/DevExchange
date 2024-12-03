@@ -51,6 +51,7 @@ export const QRGenerator: React.FC = () => {
           value={input}
           onChange={setInput}
           placeholder="Enter text or URL to generate QR code"
+          size="sm" 
           showPaste
         />
         <Select

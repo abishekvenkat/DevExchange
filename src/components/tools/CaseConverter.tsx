@@ -6,6 +6,16 @@ export const CaseConverter: React.FC = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
+
+const cases = [
+  { type: 'upper', label: 'UPPER CASE' },
+  { type: 'lower', label: 'lower case' },
+  { type: 'camel', label: 'camelCase' },
+  { type: 'pascal', label: 'PascalCase' },
+  { type: 'kebab', label: 'kebab-case' },
+  { type: 'snake', label: 'snake_case' },
+];
+
   const convertCase = (caseType: string) => {
     let result = '';
     switch (caseType) {
@@ -37,33 +47,54 @@ export const CaseConverter: React.FC = () => {
     setOutput(result);
   };
 
+  const handleInputChange = (value: string) => {
+    setInput(value);
+    convertCase('camel'); // Default conversion
+  };
+
   return (
     <Card className="w-full">
-      <CardHeader>
-        <h2 className="text-xl font-bold">Case Converter</h2>
-      </CardHeader>
-      <CardBody className="space-y-4">
-        <TextArea
-          label="Input"
-          value={input}
-          onChange={setInput}
-          placeholder="Enter text to convert"
-          showPaste
-        />
-        <div className="flex justify-center gap-2"> {/* Center the buttons */}
-          {['upper', 'lower', 'camel', 'pascal', 'kebab', 'snake'].map((caseType) => (
-            <Button key={caseType} onClick={() => convertCase(caseType)} className="btn btn-primary w-auto">
-              {caseType.charAt(0).toUpperCase() + caseType.slice(1)}
+    <CardHeader>
+      <h2 className="text-xl font-bold">Case Converter</h2>
+    </CardHeader>
+    <CardBody>
+      <div className="flex gap-4  h-600px ">
+        <div className="flex-1 ">
+          <TextArea
+            label="Input Text"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Enter text to convert"
+            showPaste
+            size="lg"
+          />
+        </div>
+        
+        <div className="flex flex-col justify-center gap-2 px-4">
+          {cases.map((c) => (
+            <Button
+              key={c.type}
+              color="default"
+              variant="flat"
+              className="w-40"
+              onClick={() => convertCase(c.type)}
+            >
+              {c.label}
             </Button>
           ))}
         </div>
-        <TextArea
-          label="Converted Output"
-          value={output}
-          readOnly
-          showCopy
-        />
-      </CardBody>
-    </Card>
+
+        <div className="flex-1">
+          <TextArea
+            label="Converted Text"
+            value={output}
+            readOnly
+            showCopy
+            size="lg"
+          />
+        </div>
+      </div>
+    </CardBody>
+  </Card>
   );
 };

@@ -62,12 +62,14 @@ export const BackslashEscape: React.FC = () => {
           onChange={setInput}
           placeholder={isEscape ? "Enter text to escape" : "Enter text to unescape"}
           showPaste
+          size="sm"
         />
         <TextArea
           label="Output"
           value={output}
           readOnly
           showCopy
+          size="sm"
         />
       </CardBody>
     </Card>

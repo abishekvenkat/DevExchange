@@ -12,9 +12,12 @@ import { QRGenerator } from './components/tools/QRGenerator';
 import { SQLFormatter } from './components/tools/SQLFormatter';
 import { CaseConverter } from './components/tools/CaseConverter';
 import { CharToAsciiConverter } from './components/tools/CharToAsciiConverter';
-
+import { LoremIpsumGenerator } from './components/tools/LoremIpsumGenerator';
+import { NumberBaseConverter } from './components/tools/NumberBaseConverter';
+import { ColorConverter } from './components/tools/ColorConverter';
 
 function App() {
+  
   return (
     <NextUIProvider>
       <Router>
@@ -32,6 +35,9 @@ function App() {
             <Route path="/sql" element={<SQLFormatter />} />
             <Route path="/case" element={<CaseConverter />} />
             <Route path="/ascii" element={<CharToAsciiConverter />} />
+            <Route path="/lorem-ipsum" element={<LoremIpsumGenerator />} />
+            <Route path="/number-base" element={<NumberBaseConverter />} />
+            <Route path="/color" element={<ColorConverter />} />
           </Routes>
         </Layout>
       </Router>

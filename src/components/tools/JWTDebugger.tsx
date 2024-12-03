@@ -39,6 +39,7 @@ export const JWTDebugger: React.FC = () => {
           onChange={setToken}
           placeholder="Paste your JWT token here"
           showPaste
+          size="sm"
         />
         <Divider />
         <TextArea
@@ -46,18 +47,21 @@ export const JWTDebugger: React.FC = () => {
           value={header}
           readOnly
           showCopy
+          size="sm"
         />
         <TextArea
           label="Payload"
           value={payload}
           readOnly
           showCopy
+          size="sm"
         />
         <TextArea
           label="Signature"
           value={signature}
           readOnly
           showCopy
+          size="sm"
         />
       </CardBody>
     </Card>

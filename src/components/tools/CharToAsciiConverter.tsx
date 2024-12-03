@@ -23,6 +23,7 @@ export const CharToAsciiConverter: React.FC = () => {
           onChange={setInput}
           placeholder="Enter characters"
           showPaste
+          size="sm"
         />
         <TextArea
           label="ASCII Output"
