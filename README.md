@@ -14,6 +14,9 @@ Welcome to the **DevExchange** project! 🎉 This is a collection of handy tools
 - **Base64 Text Converter**: Convert text to and from Base64 encoding.
 - **YAML/JSON Converter**: Convert between YAML and JSON formats.
 - **QR Code Generator**: Generate QR codes from text.
+- **Lorem Ipsum Generator**: Generate placeholder text for your projects.
+- **Number Base Converter**: Convert numbers between different bases (binary, octal, decimal, hexadecimal).
+- **Color Converter**: Convert between RGB and HEX color formats.
 
 ## Getting Started
 
