@@ -70,7 +70,8 @@ We welcome contributions! If you'd like to contribute to the Exchange Tools proj
 4. Push your changes to your forked repository.
 5. Create a pull request.
 
-Also, ⭐ if you liked it!
+⭐ if you liked it.
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R116VP7Z) if you want to support me!
 
 ---
 
