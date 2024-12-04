@@ -71,7 +71,8 @@ We welcome contributions! If you'd like to contribute to the Exchange Tools proj
 5. Create a pull request.
 
 ⭐ if you liked it.
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R116VP7Z) if you want to support me!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R116VP7Z)
 
 ---
 
